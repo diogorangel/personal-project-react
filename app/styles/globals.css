@@ -1,3 +1,10 @@
+/* src/app/styles/globals.css */
+
+/*
+  NOTE: Next.js often uses 'globals.css' for the entire app. 
+  The content below is an exact copy of your provided style.css.
+*/
+
 /* Reset Default Margins and Paddings */
 * {
     margin: 0;
