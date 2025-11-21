@@ -1,8 +1,9 @@
 /* src/app/styles/globals.css */
 
 /*
-  NOTE: Next.js often uses 'globals.css' for the entire app. 
-  The content below is an exact copy of your provided style.css.
+ NOTE: Next.js often uses 'globals.css' for the entire app. 
+ The content below is an exact copy of your provided style.css,
+ with additions for the <select> field and updated color scheme/typography.
 */
 
 /* Reset Default Margins and Paddings */
@@ -14,9 +15,11 @@
 
 /* Base Styling (Text Body/Typography) */
 body {
-    font-family: Arial, sans-serif; /* Typography */
-    background-color: #f4f4f4; /* Primary Color/Background */
-    color: #333;
+    /* UPDATED: Modern System Font Stack */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.6; /* Better readability */
+    background-color: #f4f7f6; /* Lighter background from the suggested scheme */
+    color: #333333; /* Darker text for contrast */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,68 +28,125 @@ body {
 
 /* Main Layout */
 .container {
-    background-color: #fff;
+    background-color: #ffffff; /* White card background */
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Slightly rounder corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger, cleaner shadow */
     max-width: 600px; /* Centered Layout */
     width: 100%;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    margin-bottom: 25px;
+    /* UPDATED: Primary Brand Color */
+    color: #007bff;
+    font-size: 2.2rem; /* Larger heading */
+    font-weight: 700;
 }
 
 /* Input Area Styling */
+/* NOTE: The component's JSX now handles the flex/gap for the input and select */
 .input-area {
-    display: flex;
-    margin-bottom: 20px;
+    /* Changed from flex to block/column-like structure to align with the new JSX layout */
+    margin-bottom: 25px;
 }
 
-#new-task-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
+/* NEW: General styles for input and select */
+.input-area input[type="text"],
+.input-area select {
+    padding: 10px 12px;
+    border: 2px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333333;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%; /* Make them full width of their container */
 }
 
+/* NEW: Focus style for inputs and select */
+.input-area input[type="text"]:focus,
+.input-area select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* NOTE: Removed the old input-area flex styles as they clash with the new structure.
+   The main submit button now needs styling to be full width and stand alone. */
 #add-btn {
-    background-color: #2980b9; /* Secondary Color/Action */
+    /* UPDATED: Primary action color and full-width button look */
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 0 4px 4px 0;
+    padding: 12px 15px;
+    font-weight: 600;
+    border-radius: 6px; /* Uniform corners */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
+    width: 100%; /* Make button full width */
+    margin-top: 10px; /* Add separation from the input/select row */
 }
 
 #add-btn:hover {
-    background-color: #3498db;
+    background-color: #0056b3;
 }
 
 /* List Styling */
 #task-list {
     list-style: none;
+    padding: 0; /* Ensures list starts cleanly */
 }
 
 #task-list li {
-    background-color: #ecf0f1; /* Secondary Color/Item */
-    padding: 10px;
+    background-color: #f8f9fa; /* Lighter background for list items */
+    padding: 12px 15px;
     margin-bottom: 8px;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-left: 5px solid #007bff; /* Visual highlight */
 }
 
+/* Ensure the span containing text and assigned name grows */
+#task-list li span {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+/* Delete Button Styling */
 .delete-btn {
-    background: none;
+    /* UPDATED: Solid background for a clearer action */
+    background-color: #dc9935; /* Red for delete */
     border: none;
-    color: #e74c3c; /* Highlight Color/Alert (Red for Delete) */
+    color: white;
     cursor: pointer;
+    border-radius: 50%; /* Circular button */
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #c87b23;
+}
+
+/* Add this to src/app/styles/globals.css */
+
+/* Style for completed tasks */
+#task-list li.completed .task-text-content,
+#tasks-done-list li .task-text-content {
+    text-decoration: line-through;
+    color: #6c757d; /* Lighter color for done tasks */
+}
+
+/* Optional: change the border color for the done list */
+#tasks-done-list li {
+    border-left-color: #28a745; /* Green border for completed */
 }
