@@ -4,13 +4,13 @@ import { useState, useCallback, FormEvent, ChangeEvent, useMemo } from 'react';
 import { useLocalStorage } from './lib/useLocalStorage';
 import './styles/globals.css'; // Import the base styles
 
-// --- NEW: Mock User Database ---
+// --- NEW: Mock User Database authors ---
 const mockUsers = [
   'Unassigned', // Default option
   'Diogo Rangel Dos Santos',
 ];
 
-// --- UPDATED: Define the type for a single task item ---
+// --- UPDATED: Define the type for a single task item strings and numbers, ---
 interface Task {
   id: number;
   text: string;
@@ -20,7 +20,7 @@ interface Task {
 }
 
 export default function Home() {
-  // #9: Data Persistence with Local Storage
+  // #9: Data Persistence with Local Storage stay
   const [tasks, setTasks] = useLocalStorage<Task[]>('todo-tasks', []);
 
   // State for the controlled input field (#new-task-input)
