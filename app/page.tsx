@@ -1,21 +1,21 @@
-'use client'; // Required for using client-side hooks like useState and useEffect in Next.js App Router
+'use client';
 
 import { useState, useCallback, FormEvent, ChangeEvent, useMemo } from 'react';
 import { useLocalStorage } from './lib/useLocalStorage';
 import './styles/globals.css'; // Import the base styles
 
-// --- NEW: Mock User Database authors ---
+// Database authors ---
 const mockUsers = [
-  'Unassigned', // Default option
+  'Unassigned', 
   'Diogo Rangel Dos Santos',
+  'Invited User',
 ];
 
-// --- UPDATED: Define the type for a single task item strings and numbers, ---
+
 interface Task {
   id: number;
   text: string;
   assignedTo: string;
-  // ✅ NEW FIELD: To track completion status
   isComplete: boolean;
 }
 
@@ -139,7 +139,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h1>My To-Do List</h1>
+      <h1>My To-Do List Final Project WDD 430: Web Full-Stack Development</h1>
 
       <form onSubmit={addTask} className="input-area">
         <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
