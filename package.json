@@ -13,6 +13,17 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogorangel/personal-project-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogorangel/personal-project-react/issues"
+  },
+  "homepage": "https://github.com/diogorangel/personal-project-react#readme",
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

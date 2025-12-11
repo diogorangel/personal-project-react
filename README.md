@@ -2,7 +2,26 @@ Project by @_diogorangel (Diogo Rangel Dos Santos)
 My personal project with react
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+To access the project running : [text](https://personal-project-react-henna.vercel.app/)
+
 ## Getting Started
+```bash
+Step-by-Step Instructions
+Open your terminal (Command Prompt, PowerShell, or Bash).
+Run the creation command to create a new React app using Vite:
+```bash
+npm create vite@latest my-react-app -- --template react
+Replace my-react-app with your desired project name. This command will create a new folder with that name and set up the project files inside it.
+Navigate into your project directory using the cd command:
+```bash
+cd my-react-app
+Install the project dependencies listed in the package.json file:
+```bash
+npm install
+Start the development server to view your app in a browser:
+```bash
+npm run dev
+```
 
 First, run the development server:
 
