@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 To access the project running : [text](https://personal-project-react-henna.vercel.app/)
 
-## Getting Started
+## Getting Started Project React
 ```bash
 Step-by-Step Instructions
 Open your terminal (Command Prompt, PowerShell, or Bash).
