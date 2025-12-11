@@ -1,5 +1,5 @@
 Project by @_diogorangel (Diogo Rangel Dos Santos)
-WDD430 - React and next project
+My personal project with react
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
